@@ -1,0 +1,371 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GameZone | Gaming Portal</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    scroll-behavior: smooth;
+}
+body {
+    background: #090d18;
+    color: #f1f5f9;
+}
+header {
+    background: #111827;
+    padding: 20px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    border-bottom: 2px solid #00f5ff;
+}
+.logo {
+    color: #00f5ff;
+    font-size: 28px;
+    font-weight: bold;
+}
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 10px;
+    transition: 0.3s;
+}
+nav a:hover {
+    color: #00f5ff;
+}
+.hero {
+    min-height: 360px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 30px;
+    background: linear-gradient(135deg, #172554, #581c87, #090d18);
+}
+.hero h1 {
+    font-size: 48px;
+    color: #00f5ff;
+    text-shadow: 0 0 20px #00f5ff;
+}
+.hero p {
+    margin: 20px 0;
+    font-size: 18px;
+}
+.btn {
+    display: inline-block;
+    background: #00f5ff;
+    color: #090d18;
+    padding: 12px 22px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.btn:hover {
+    background: #a855f7;
+    color: white;
+    transform: scale(1.05);
+}
+section {
+    padding: 45px 7%;
+    scroll-margin-top: 15px;
+}
+.title {
+    text-align: center;
+    font-size: 30px;
+    color: #00f5ff;
+    margin-bottom: 28px;
+}
+.games {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+.game-card {
+    background: #151c2c;
+    border: 1px solid #26364c;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: 0.3s;
+}
+.game-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0 18px #00f5ff55;
+    border-color: #00f5ff;
+}
+.game-card img {
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
+}
+.game-card h3 {
+    margin: 15px;
+    color: #a855f7;
+}
+.game-card p {
+    margin: 0 15px 15px;
+    color: #cbd5e1;
+    line-height: 1.5;
+}
+.game-card .btn {
+    margin: 0 15px 18px;
+}
+.table-box {
+    overflow-x: auto;
+    background: #151c2c;
+    padding: 15px;
+    border-radius: 10px;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 480px;
+}
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #334155;
+}
+th {
+    background: #1e293b;
+    color: #00f5ff;
+}
+tr:hover {
+    background: #1e293b;
+}
+.rank {
+    color: #facc15;
+    font-weight: bold;
+}
+.columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+}
+.panel {
+    background: #151c2c;
+    padding: 22px;
+    border-radius: 10px;
+    border-left: 4px solid #a855f7;
+    margin-bottom: 15px;
+    transition: 0.3s;
+}
+.panel:hover {
+    border-left-color: #00f5ff;
+    transform: translateX(4px);
+}
+.panel h3 {
+    color: #00f5ff;
+    margin-bottom: 10px;
+}
+.panel p {
+    color: #cbd5e1;
+    line-height: 1.6;
+}
+footer {
+    text-align: center;
+    padding: 25px;
+    background: #111827;
+    color: #94a3b8;
+    border-top: 2px solid #00f5ff;
+}
+#message {
+    color: #00f5ff;
+    margin-top: 12px;
+}
+@media(max-width: 800px) {
+    .games {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .columns {
+        grid-template-columns: 1fr;
+    }
+    .hero h1 {
+        font-size: 36px;
+    }
+}
+@media(max-width: 520px) {
+    header {
+        justify-content: center;
+        gap: 15px;
+    }
+    nav {
+        text-align: center;
+    }
+    nav a {
+        display: inline-block;
+        margin: 7px;
+    }
+    .games {
+        grid-template-columns: 1fr;
+    }
+    .hero h1 {
+        font-size: 30px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">🎮 GAMEZONE</div>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#games">Games</a>
+        <a href="#tournaments">Tournaments</a>
+        <a href="#teams">Teams</a>
+        <a href="#leaderboard">Leaderboard</a>
+        <a href="#news">News</a>
+    </nav>
+</header>
+
+<section class="hero" id="home">
+    <div>
+        <h1>ENTER THE GAME</h1>
+        <p>Discover games. Compete with legends. Become a champion.</p>
+        <a href="#games" class="btn">Explore Games</a>
+    </div>
+</section>
+
+<section id="games">
+    <h2 class="title">🔥 Popular Games</h2>
+    <div class="games">
+
+        <div class="game-card">
+            <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=700&q=80" alt="Esports gaming setup">
+            <h3>Valorant</h3>
+            <p>5v5 tactical shooter. Test your aim and strategy.</p>
+            <button class="btn" onclick="selectGame('Valorant')">View Profile</button>
+        </div>
+
+        <div class="game-card">
+            <img src="https://images.unsplash.com/photo-1593305841991-05c297ba4575?auto=format&fit=crop&w=700&q=80" alt="Gaming console">
+            <h3>BGMI</h3>
+            <p>Battle royale action. Survive and claim victory.</p>
+            <button class="btn" onclick="selectGame('BGMI')">View Profile</button>
+        </div>
+
+        <div class="game-card">
+            <img src="https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?auto=format&fit=crop&w=700&q=80" alt="Gaming controller">
+            <h3>Fortnite</h3>
+            <p>Build, battle, and outlast your opponents.</p>
+            <button class="btn" onclick="selectGame('Fortnite')">View Profile</button>
+        </div>
+
+    </div>
+    <p id="message"></p>
+</section>
+
+<section id="tournaments">
+    <h2 class="title">🏆 Tournament Schedule</h2>
+    <div class="table-box">
+        <table>
+            <tr>
+                <th>Tournament</th><th>Game</th>
+                <th>Date</th><th>Prize Pool</th>
+            </tr>
+            <tr>
+                <td>Cyber Cup</td><td>Valorant</td>
+                <td>15 Nov 2026</td><td>₹50,000</td>
+            </tr>
+            <tr>
+                <td>Battle Arena</td><td>BGMI</td>
+                <td>22 Nov 2026</td><td>₹75,000</td>
+            </tr>
+            <tr>
+                <td>Pro Gaming League</td><td>Fortnite</td>
+                <td>05 Dec 2026</td><td>₹40,000</td>
+            </tr>
+        </table>
+    </div>
+</section>
+
+<section id="teams">
+    <h2 class="title">🛡️ Teams & Players</h2>
+    <div class="columns">
+        <div class="panel">
+            <h3>Team Phoenix</h3>
+            <p>Captain: Shadow</p>
+            <p>Players: Shadow, Blaze, Ace, Nova</p>
+            <p>Speciality: Tactical teamwork</p>
+        </div>
+        <div class="panel">
+            <h3>Team Thunder</h3>
+            <p>Captain: Storm</p>
+            <p>Players: Storm, Hunter, Ghost, Venom</p>
+            <p>Speciality: Aggressive gameplay</p>
+        </div>
+        <div class="panel">
+            <h3>Player Profile: Shadow</h3>
+            <p>Role: Team Captain</p>
+            <p>Game: Valorant</p>
+            <p>Skill: Strategy and precision</p>
+        </div>
+        <div class="panel">
+            <h3>Player Profile: Storm</h3>
+            <p>Role: Entry Fragger</p>
+            <p>Game: BGMI</p>
+            <p>Skill: Fast reactions</p>
+        </div>
+    </div>
+</section>
+
+<section id="leaderboard">
+    <h2 class="title">🥇 Top Players Leaderboard</h2>
+    <div class="table-box">
+        <table>
+            <tr>
+                <th>Rank</th><th>Player</th>
+                <th>Team</th><th>Points</th>
+            </tr>
+            <tr><td class="rank">#1</td><td>Shadow</td><td>Phoenix</td><td>9850</td></tr>
+            <tr><td class="rank">#2</td><td>Storm</td><td>Thunder</td><td>9200</td></tr>
+            <tr><td class="rank">#3</td><td>Blaze</td><td>Phoenix</td><td>8750</td></tr>
+            <tr><td>#4</td><td>Hunter</td><td>Thunder</td><td>8100</td></tr>
+            <tr><td>#5</td><td>Nova</td><td>Phoenix</td><td>7800</td></tr>
+        </table>
+    </div>
+</section>
+
+<section id="news">
+    <h2 class="title">📰 Gaming News</h2>
+    <div class="panel">
+        <h3>New Esports Season</h3>
+        <p>Teams are preparing for the upcoming competitive season.</p>
+    </div>
+    <div class="panel">
+        <h3>Championship Updates</h3>
+        <p>Watch for tournament announcements and match schedules.</p>
+    </div>
+    <div class="panel">
+        <h3>Player Spotlight</h3>
+        <p>Top-ranked players continue to compete for leaderboard glory.</p>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 GameZone Gaming Portal</p>
+    <p>Play Fair • Compete Hard • Become a Legend</p>
+</footer>
+
+<script>
+function selectGame(game) {
+    document.getElementById("message").textContent =
+        "You selected " + game + "! Welcome to its game profile.";
+}
+</script>
+
+</body>
+</html>
+

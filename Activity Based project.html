@@ -1,0 +1,294 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Dashboard</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+body {
+    background: #f1f5f9;
+    color: #1e293b;
+}
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+.sidebar {
+    width: 220px;
+    background: #172554;
+    color: white;
+    padding: 25px 15px;
+    flex-shrink: 0;
+}
+.sidebar h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+.sidebar a {
+    display: block;
+    padding: 13px;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    margin-bottom: 8px;
+}
+.sidebar a:hover, .sidebar a.active {
+    background: #3b82f6;
+}
+main {
+    flex: 1;
+    padding: 25px;
+    min-width: 0;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 25px;
+}
+header h1 {
+    font-size: 27px;
+}
+.profile {
+    background: linear-gradient(120deg, #2563eb, #7c3aed);
+    color: white;
+    padding: 22px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    line-height: 1.8;
+}
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-bottom: 25px;
+}
+.card, .section {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px #0000000d;
+}
+.card h3 {
+    color: #64748b;
+    font-size: 15px;
+}
+.card p {
+    color: #2563eb;
+    font-size: 25px;
+    font-weight: bold;
+    margin-top: 12px;
+}
+.section {
+    margin-bottom: 25px;
+    scroll-margin-top: 15px;
+}
+.section h2 {
+    margin-bottom: 18px;
+    font-size: 21px;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #e2e8f0;
+}
+th {
+    background: #eff6ff;
+    color: #1d4ed8;
+}
+.progress {
+    background: #e2e8f0;
+    height: 10px;
+    border-radius: 10px;
+    overflow: hidden;
+    min-width: 70px;
+}
+.bar {
+    height: 100%;
+    background: #22c55e;
+    border-radius: 10px;
+}
+.notice {
+    padding: 12px;
+    margin: 10px 0;
+    background: #eff6ff;
+    border-left: 4px solid #3b82f6;
+    border-radius: 5px;
+    line-height: 1.5;
+}
+button {
+    background: #2563eb;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+button:hover {
+    background: #1d4ed8;
+}
+footer {
+    text-align: center;
+    padding: 15px;
+    color: #64748b;
+}
+@media(max-width: 800px) {
+    .container { flex-direction: column; }
+    .sidebar { width: 100%; }
+    .sidebar h2 { margin-bottom: 15px; }
+    .sidebar a { display: inline-block; margin: 3px; }
+    .cards { grid-template-columns: repeat(2, 1fr); }
+    main { padding: 15px; }
+}
+@media(max-width: 500px) {
+    .cards { grid-template-columns: 1fr; }
+    .section { overflow-x: auto; }
+    header h1 { font-size: 23px; }
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<aside class="sidebar">
+    <h2>🎓 Student Portal</h2>
+    <a href="#home" class="active">🏠 Dashboard</a>
+    <a href="#results">📊 Semester Results</a>
+    <a href="#attendance">📅 Attendance</a>
+    <a href="#subjects">📚 Subjects</a>
+    <a href="#exams">📝 Exam Schedule</a>
+    <a href="#announcements">📢 Announcements</a>
+</aside>
+
+<main>
+<header id="home">
+    <h1>Student Dashboard</h1>
+    <span>Welcome, Rajesh! 👋</span>
+</header>
+
+<div class="profile">
+    <h2>Y. Rajesh</h2>
+    <p>Student ID: 24CSE101</p>
+    <p>Branch: Computer Science and Engineering</p>
+    <p>College: NRI University</p>
+    <p>Semester: 1st Semester | Academic Year: 2026-27</p>
+</div>
+
+<div class="cards">
+    <div class="card">
+        <h3>Overall Attendance</h3>
+        <p>85%</p>
+    </div>
+    <div class="card">
+        <h3>Semester CGPA</h3>
+        <p>8.6</p>
+    </div>
+    <div class="card">
+        <h3>Total Subjects</h3>
+        <p>6</p>
+    </div>
+</div>
+
+<section class="section" id="results">
+<h2>📊 Semester Results</h2>
+<table>
+    <tr><th>Semester</th><th>Percentage</th><th>Grade</th></tr>
+    <tr><td>Semester 1</td><td>86%</td><td>A</td></tr>
+    <tr><td>Semester 2</td><td>--</td><td>Pending</td></tr>
+</table>
+</section>
+
+<section class="section" id="attendance">
+<h2>📅 Attendance Details</h2>
+<table>
+    <tr><th>Subject</th><th>Attendance</th><th>Progress</th></tr>
+    <tr>
+        <td>Python</td><td>90%</td>
+        <td><div class="progress"><div class="bar" style="width:90%"></div></div></td>
+    </tr>
+    <tr>
+        <td>Mathematics</td><td>82%</td>
+        <td><div class="progress"><div class="bar" style="width:82%"></div></div></td>
+    </tr>
+    <tr>
+        <td>English</td><td>75%</td>
+        <td><div class="progress"><div class="bar" style="width:75%"></div></div></td>
+    </tr>
+    <tr>
+        <td>Physics</td><td>88%</td>
+        <td><div class="progress"><div class="bar" style="width:88%"></div></div></td>
+    </tr>
+</table>
+</section>
+
+<section class="section" id="subjects">
+<h2>📚 Subject Information</h2>
+<table>
+    <tr><th>Subject</th><th>Code</th><th>Faculty</th></tr>
+    <tr><td>Python Programming</td><td>CS101</td><td>Mr. Kumar</td></tr>
+    <tr><td>Mathematics</td><td>MA101</td><td>Mrs. Priya</td></tr>
+    <tr><td>English</td><td>EN101</td><td>Mr. David</td></tr>
+    <tr><td>Engineering Physics</td><td>PH101</td><td>Mrs. Anu</td></tr>
+</table>
+</section>
+
+<section class="section" id="exams">
+<h2>📝 Examination Schedule</h2>
+<table>
+    <tr><th>Subject</th><th>Date</th><th>Time</th></tr>
+    <tr><td>Python</td><td>10-12-2026</td><td>9 AM</td></tr>
+    <tr><td>Mathematics</td><td>12-12-2026</td><td>9 AM</td></tr>
+    <tr><td>English</td><td>15-12-2026</td><td>9 AM</td></tr>
+    <tr><td>Physics</td><td>17-12-2026</td><td>9 AM</td></tr>
+</table>
+</section>
+
+<section class="section" id="announcements">
+<h2>📢 Announcements</h2>
+<div class="notice">📌 Semester examinations are approaching. Prepare well!</div>
+<div class="notice">📌 Complete your assignments before the deadline.</div>
+<div class="notice">📌 Check attendance regularly through the student portal.</div>
+<button onclick="showMessage()">View Reminder</button>
+<p id="reminder" style="margin-top:12px"></p>
+</section>
+
+<footer>
+    <p>© 2026 Student Dashboard | NRI University</p>
+</footer>
+</main>
+</div>
+
+<script>
+function showMessage() {
+    document.getElementById("reminder").textContent =
+        "Remember to prepare for exams and submit assignments on time!";
+}
+
+const links = document.querySelectorAll(".sidebar a");
+
+links.forEach(function(link) {
+    link.addEventListener("click", function() {
+        links.forEach(function(item) {
+            item.classList.remove("active");
+        });
+        this.classList.add("active");
+    });
+});
+</script>
+</body>
+</html>
